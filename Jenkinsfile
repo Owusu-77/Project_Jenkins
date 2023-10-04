@@ -1,18 +1,24 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage'(1-Clonecode'){
-            steps{
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Team7-git-id', url: 'https://github.com/Owusu-77/Project_Jenkins.git']])
+    stages {
+        stage('1-Clonecode') {
+            steps {
+                checkout(
+                    scm: [$class: 'GitSCM', branches: [[name: '*/main']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: 'Team7-git-id', url: 'https://github.com/Owusu-77/Project_Jenkins.git']]]
+                )
             }
         }
-        stage('2-Build'){
-            steps{
+        stage('2-Build') {
+            steps {
                 sh 'df -h'
             }
         }
-        stage('3-RunTest'){
-            steps{
+        stage('3-RunTest') {
+            steps {
                 sh 'lscpu'
             }
         }
