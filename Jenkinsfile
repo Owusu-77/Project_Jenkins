@@ -11,7 +11,7 @@ pipeline{
                 sh 'df -h'
             }
         }
-        stage(3-Run Test){
+        stage(3-RunTest){
             steps{
                 sh 'lscpu'
             }
