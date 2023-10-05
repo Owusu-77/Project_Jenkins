@@ -22,6 +22,11 @@ pipeline {
                 sh 'lscpu'
             }
         }
+         stage('4-Security_Check') {
+            steps {
+              sh 'bash -x /var/lib/jenkins/workspace/Team7_project01/pipeline.sh'  
+            }
+    }
     }
 }
 
