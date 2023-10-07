@@ -15,6 +15,11 @@ pipeline {
             steps {
                 sh 'lscpu'
             }
+        }
+        stage('4-Deploy') {
+            steps {
+            echo "We are ready to deploy"
+            }
         } 
     }
 }
