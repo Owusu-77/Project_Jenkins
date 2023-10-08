@@ -20,6 +20,11 @@ pipeline {
             steps {
             echo "We are ready to deploy"
             }
+        }
+        stage('4-SecurityCheck') {
+            steps {
+                sh '/var/lib/jenkins/workspace/Team7-pipeline-Demo1/pipeline.sh'
+            }
         } 
     }
 }
