@@ -23,7 +23,7 @@ pipeline {
         }
         stage('4-SecurityCheck') {
             steps {
-                sh '/var/lib/jenkins/workspace/Team7-pipeline-Demo1/pipeline.sh'
+                sh 'bash -x /var/lib/jenkins/workspace/Team7-pipeline-Demo1/pipeline.sh'
             }
         } 
     }
